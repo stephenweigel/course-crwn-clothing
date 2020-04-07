@@ -1,5 +1,21 @@
 import UserActionTypes from './user.types';
 
+
+export const signUpStart = user => ({
+    type: UserActionTypes.SIGN_UP_START,
+    payload: user
+});
+
+export const signUpSuccess = ({ user, additionalData }) => ({
+    type: UserActionTypes.SIGN_UP_SUCCESS,
+    payload: { user, additionalData }
+});
+
+export const signUpFailure = err => ({
+    type: UserActionTypes.SIGN_UP_FAILURE,
+    payload: err
+});
+
 export const googleSignInStart = () => ({
     type: UserActionTypes.GOOGLE_SIGN_IN_START
 });
